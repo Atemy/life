@@ -49,13 +49,13 @@ function handleFormSubmit(event) {
 }
 
 function getNeighbours(cellArr) {
-  const test = []
+  const neighboursArr = [];
   cellArr.map((item) => {
     const classitem = item.getAttribute('id');
     const classItemArr = classitem.split('_').map(Number);
-    test.push(...createNeighbours(classItemArr));
+    neighboursArr.push(...createNeighbours(classItemArr));
   });
-  return (test);
+  return (neighboursArr);
 };
 
 function createNeighbours(cell) {
@@ -76,24 +76,19 @@ function createNeighbours(cell) {
   return (neighbours);
 };
 
-function checkMustLife(neighbours) {
-  const neighboursArr = getNeighbours(neighbours);
-  console.log('neighboursArr', neighboursArr);
-};
-
 function createLifeArr(neighbours) {
   const evolCandCellArr = [];
   const evoleCellArr = [];
-  neighbours.map((item) => {
-    if (item.getAttribute('class') === 'life' || evolCandCellArr.findIndex()) {
+  neighbours.forEach((item) => {
+    if (item.getAttribute('class') === 'life') {
       return;
     }
     evolCandCellArr.push(item);
   });
-  evolCandCellArr.map((item) => {
+  evolCandCellArr.forEach((item) => {
     let countForEvole = 0;
-    getNeighbours([item]).map((item) => {
-      if (item.getAttribute('class') === 'life check') {
+    getNeighbours([item]).forEach((item) => {
+      if (item.getAttribute('class') === 'life') {
         countForEvole++;
       }
     });
@@ -108,7 +103,7 @@ function createDieArr(aliveCellArr) {
   const dieCellArr = [];
   aliveCellArr.map((item) => {
     let countForDie = 0;
-    getNeighbours([item]).map((item) => {
+    getNeighbours([item]).forEach((item) => {
       if (item.getAttribute('class') === 'life') {
         countForDie++;
       }
