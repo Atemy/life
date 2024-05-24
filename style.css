@@ -1,0 +1,23 @@
+body {
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+td {
+    min-width: 10px;
+    height: 10px;
+    border: 1px solid black;
+}
+
+
+.life {
+    background-color: green;
+}
+
+.dead {
+    background-color: bisque;
+}
+
+.neighbour {
+    background-color: aqua;
+}

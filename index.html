@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заголовок страницы</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <meta property="og:title" content="Заголовок страницы в OG">
+    <meta property="og:description" content="Описание страницы в OG">
+    <meta property="og:image" content="https://example.com/image.jpg">
+    <meta property="og:url" content="https://example.com/">
+  </head>
+  <body>
+    <header>
+        <div>life</div>
+    </header>
+    <main>
+      <table class="field" id="field"></table>
+      
+      <div>
+        Размер поля
+        <span id="horizontalSize"></span>
+        X
+        <span id="verticalSize"></span>
+      </div>
+      <form class="form" id="form">
+        <div>
+            <label for="horizontal-input">Введите количество ячеек по горизонтали</label>
+            <input type="number" id="horizontal-input" name="horizontal-input" required/>
+        </div>
+        <div>
+            <label for="vertical-input">Введите количество ячеек по вертикали</label>
+            <input type="number" id="vertical-input" name="vertical-input" required/>
+        </div>
+        <input type="submit" value="Изменить размер поля">
+    </form>
+    <button id="getRandomButton">создать случайное поле</button>
+    <button id="getNeighbours">Показать соседей</button>
+    <button id="stepButton">Сделать шаг</button>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>
