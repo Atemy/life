@@ -3,12 +3,64 @@ body {
     overflow-y: scroll;
 }
 
-td {
-    min-width: 10px;
+#field {
+    margin-top: 10px;
+    width: min-content;
+}
+
+#field td {
+   min-width: 10px;
     height: 10px;
     border: 1px solid black;
 }
 
+button {
+    margin-right: 10px;
+}
+
+button:last-child {
+    margin-right: 0px;
+}
+
+#form {
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 500px;
+}
+
+.buttonPanel {
+    display: flex;
+    justify-content: space-between;
+}
+
+#infoTable {
+    width: 400px;
+    height: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.infoPanel {
+    display: flex;
+    flex-direction: column;
+}
+
+#clearTableButton {
+    width: max-content;
+}
+
+.labelCell {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.numberInput {
+    width: 100px;
+}
 
 .life {
     background-color: green;
@@ -18,6 +70,19 @@ td {
     background-color: bisque;
 }
 
-.neighbour {
-    background-color: aqua;
+.tdValue {
+    border: 1px solid black;
+    text-align:center;
+}
+
+.tdTitle {
+    border: 1px solid black;
+    padding-left: 5px;
+    padding-right: 10px;   
+}
+
+.menuPanel{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

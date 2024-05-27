@@ -1,44 +1,58 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Заголовок страницы</title>
-    <link rel="stylesheet" href="./style.css">
 
-    <meta property="og:title" content="Заголовок страницы в OG">
-    <meta property="og:description" content="Описание страницы в OG">
-    <meta property="og:image" content="https://example.com/image.jpg">
-    <meta property="og:url" content="https://example.com/">
-  </head>
-  <body>
-    <header>
-        <div>life</div>
-    </header>
-    <main>
-      <table class="field" id="field"></table>
-      
-      <div>
-        Размер поля
-        <span id="horizontalSize"></span>
-        X
-        <span id="verticalSize"></span>
-      </div>
-      <form class="form" id="form">
-        <div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main>
+    <div class="menuPanel">
+      <div class="controlPanel">
+        <form class="form" id="form">
+          <div class="labelCell">
             <label for="horizontal-input">Введите количество ячеек по горизонтали</label>
-            <input type="number" id="horizontal-input" name="horizontal-input" required/>
-        </div>
-        <div>
+            <input type="number" class="numberInput" id="horizontal-input" name="horizontal-input" required />
+          </div>
+          <div class="labelCell">
             <label for="vertical-input">Введите количество ячеек по вертикали</label>
-            <input type="number" id="vertical-input" name="vertical-input" required/>
+            <input type="number" class="numberInput" id="vertical-input" name="vertical-input" required />
+          </div>
+          <input type="submit" id="submitButton" value="Изменить размер поля">
+        </form>
+        <div class="buttonPanel">
+          <button id="getRandomButton">Сгенерировать поле</button>
+          <button id="clearButton">Очистить поле</button>
+          <button id="stepButton">Сделать шаг</button>
+          <button id="startButton">Старт</button>
+          <button id="stopButton" disabled>Пауза</button>
         </div>
-        <input type="submit" value="Изменить размер поля">
-    </form>
-    <button id="getRandomButton">создать случайное поле</button>
-    <button id="getNeighbours">Показать соседей</button>
-    <button id="stepButton">Сделать шаг</button>
-    </main>
-    <script src="./index.js"></script>
-  </body>
+      </div>
+
+      <div class="infoPanel">
+        <table id="infoTable">
+          <tr>
+            <td class="tdTitle">Размер поля</td>
+            <td class="tdValue"><span id="horizontalSize"></span>X<span id="verticalSize"></span></td>
+          </tr>
+          <tr>
+            <td class="tdTitle">Время выполнения последнего шага (ms)</td>
+            <td class="tdValue" id="lastTimeInfo">0</td>
+          </tr>
+          <tr>
+            <td class="tdTitle">Самый долгий шаг (ms)</td>
+            <td class="tdValue" id="longestTimeInfo">0</td>
+          </tr>
+        </table>
+        <button id="clearTableButton">Очистить таблицу</button>
+      </div>
+    </div>
+    <table class="field" id="field"></table>
+  </main>
+  <script src="./index.js"></script>
+</body>
+
 </html>
